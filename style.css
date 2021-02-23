@@ -1,0 +1,49 @@
+html {
+  background-color: white;
+}
+
+.ui.borderless.top.menu {
+  color: white;
+  background-color: #006491;
+  box-sizing: border-box;
+  box-shadow: 0 0.1658rem 0.8125rem 0 dimgrey;
+  display: block;
+  font-family: 'Teko', sans-serif;
+  letter-spacing: 0.04rem;
+}
+
+#order, #menu, #coupons, #rewards, #tracker, #sign-in, #cart {
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.ui.basic.button {
+  border-width: 0.18em;
+  border-style: solid;
+  border-color: white;
+}
+
+.ui.basic.button a{
+  color: white;
+}
+
+#sign-in {
+  background-color: #005177;
+}
+
+.ui.basic.button:hover {
+  fill-opacity: 0;
+  background-image: none !important;
+  background-color: #232323 !important;
+  transition: background-color 1s linear;
+}
+.floating.ui.red.circular.label {
+  position: absolute;
+  left: 5em;
+  top: 2em;
+}
+
+.map.marker.icon {
+  color: white;
+}
