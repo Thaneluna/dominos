@@ -1,21 +1,37 @@
+:root {
+  --elephantFont: Elephant, Helvetica, "Roboto Slab";
+  --tekoFont: 'Teko', sans-serif;
+  --arialFont: 'Arial Narrow', Helvetica, "Roboto Slab";
+  --courgetteFont: Courgette, Helvetica, "Roboto Slab"
+}
 html {
   background-color: white;
 }
 
 .ui.borderless.top.menu {
   color: white;
+  border: none;
   background-color: #006491;
-  box-sizing: border-box;
   box-shadow: 0 0.1658rem 0.8125rem 0 dimgrey;
-  display: block;
-  font-family: 'Teko', sans-serif;
+  font-family: var(--tekoFont);
   letter-spacing: 0.04rem;
+  margin-bottom: 3em;
 }
 
 #order, #menu, #coupons, #rewards, #tracker, #sign-in, #cart {
   color: white;
   font-size: 1.4rem;
+  font-weight: 500;
+  padding: 0.45em;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: #006491;
   text-align: center;
+  letter-spacing: 0.04rem;
 }
 
 .ui.basic.button {
@@ -24,7 +40,7 @@ html {
   border-color: white;
 }
 
-.ui.basic.button a{
+.ui.basic.button a, .map.marker.icon {
   color: white;
 }
 
@@ -40,10 +56,503 @@ html {
 }
 .floating.ui.red.circular.label {
   position: absolute;
-  left: 5em;
-  top: 2em;
+  left: 3.8em;
+  top: 0.4em
 }
 
-.map.marker.icon {
+#start-your-order {
+  padding-right: 2em;
+  padding-left: 2em;
+  font-weight: bold;
+  font-family: var(--tekoFont);
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-family: 'Teko', sans-serif;
+  font-size: 20px;
+  color: #006491;
+}
+
+.mix-match.text {
+  font-family: 'Teko', sans-serif;
+  font-size: 2.1em;
+  color: #555555;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 3px;
+}
+
+.column img {
+  margin-top: 10px;
+}
+
+.mix-match.column::after {
+  content:"";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.mix-match.column {
+  background-image: url("https://cache.dominos.com/olo/6_47_2/assets/build/market/US/_en/images/promo/2018-hero-mixmatch-desktop.jpg");
+  position: relative;
+  height: 520px;
+  width: 578px;
+  right: 30px;
+}
+
+.mix-match.column > * {
+  z-index: 10;
+  position: relative;
+}
+
+.mix-match.column img {
+  z-index: 1;
+  width: 200px;
+  height: 50px;
+  right: 175px;
+  top: 8px;
+}
+
+.mix-match.content {
+  position: relative;
+  height: 100%;
+  right: 175px;
+  top: 8px;
+}
+
+.mix-match.content::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+}
+
+#mix-matchText {
+  position: relative;
+  font-family: var(--tekoFont);
+  font-weight: lighter;
+  color: #555555;
+  z-index: 3;
+  bottom: 70px;
+}
+
+.mix-match.desc {
+  position: relative;
+  text-shadow: -1px 2px 8px white, 5px 3px 8px black;
+  margin: 300px auto;
   color: white;
+  font-size: 5em;
+  font-family: var(--tekoFont);
+  text-align: left;
+  left: 190px;
+  bottom: 320px;
+  z-index: 1;
+}
+
+.promo_dollar-digit, .promo_cents {
+  text-shadow: -1px 1px 0 #e31837, -2px 2px 0 #e31837, -3px 3px 0 #e31837, -4px 4px 0 #e31837, -5px 5px 0 #e31837, -6px 6px 0 #e31837, -7px 7px 0 #e31837, -8px 8px 0 #e31837, -9px 9px 0 #e31837, -10px 10px 0 #e31837, -11px 11px 0 #e31837, -12px 12px 0 #e31837, -13px 13px 0 #e31837;
+}
+
+.dollar_sign {
+  position: relative;
+  text-shadow: -1px 4px 0 #e31837, -6px 2px 0 #e31837, -5px 3px 0 #e31837, -4px 4px 0 #e31837;
+}
+
+#mix-matchDollarSign {
+  z-index: 1;
+  bottom: 510px;
+  right: 75px;
+  text-align: center;
+  color: white;
+  font-size: 5.5em;
+  font-family: var(--arialFont);
+}
+
+#mix-matchDollarDigit {
+  position: relative;
+  bottom: 510px;
+  right:10px;
+  text-align: center;
+  color: white;
+  font-size: 11em;
+  font-family: var(--arialFont);
+  z-index: 2;
+}
+
+#mix-matchCents {
+  position: relative;
+  bottom: 560px;
+  left: 55px;
+  text-align: center;
+  color: white;
+  font-size: 6em;
+  font-family: var(--arialFont);
+  z-index: 1;
+}
+
+#each-text {
+  position: relative;
+  bottom: 490px;
+  left: 70px;
+  text-shadow: 1px 1px 8px black;
+  text-align: center;
+  color: white;
+  font-weight: lighter;
+  font-size: 2.8em;
+  font-family: var(--courgetteFont);
+  z-index: 1;
+}
+
+#mix-OrderButton {
+  position: relative;
+  bottom: 450px;
+  right: 20px;
+  padding: 1.2em;
+  width: 1.5in;
+  font-weight: lighter;
+  font-size: 1.25em;
+  font-family: var(--tekoFont);
+  z-index: 3;
+}
+
+#mix-matchItem {
+  position: relative;
+  text-shadow: -1px 2px 8px white, 1px 1px 8px black;
+  bottom: 495px;
+  left: 175px;
+  alignment: left;
+  color: white;
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 1em;
+  font-family: var(--tekoFont);
+  z-index: 1;
+}
+
+.combo.column::after {
+  content:"";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.combo.column {
+  background-image: url("https://cache.dominos.com/olo/6_47_2/assets/build/market/US/_en/images/promo/2018-side-perfect-combo-desktop.jpg");
+  left: 180px;
+  height: 255px;
+  width: 342px;
+  alignment: center;
+}
+
+.combo.column > * {
+  z-index: 10;
+  position: relative;
+}
+
+.combo.column img {
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  height: 30px;
+  right: 10px;
+  bottom: 2px;
+}
+
+.combo.content {
+  position: relative;
+  height: 100%;
+  right: 50px;
+  top: 8px;
+}
+
+.combo.content::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 4;
+}
+
+#combo-text {
+  position: relative;
+  font-size: x-large;
+  font-family: var(--tekoFont);
+  font-weight: lighter;
+  color: #555555;
+  z-index: 1;
+  bottom: 60px;
+  right: 10px;
+}
+
+#combo-dollarSign {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  bottom: 5px;
+  left: 50px;
+  color: white;
+  font-size: 3.8em;
+  font-family: var(--arialFont);
+}
+
+#combo-DollarDigit {
+  position: relative;
+  text-align: center;
+  color: white;
+  left: 100px;
+  bottom: 20px;
+  font-size: 6em;
+  font-family: var(--arialFont);
+  z-index: 3;
+}
+
+#combo-cents {
+  position: relative;
+  text-align: center;
+  bottom: 60px;
+  left: 168px;
+  color: white;
+  font-size: 5em;
+  font-family: var(--arialFont);
+  z-index: 1;
+}
+
+#combo-orderButton {
+  position: relative;
+  top: 5px;
+  left: 130px;
+  padding: 0.8em;
+  width: 1.5in;
+  font-weight: lighter;
+  font-size: 1.25em;
+  font-family: var(--tekoFont);
+  z-index: 3;
+}
+
+#combo-item {
+  position: relative;
+  text-shadow: -1px 2px 8px white, 1px 1px 8px black;
+  text-align: left;
+  color: white;
+  bottom: 35px;
+  left: 50px;
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 0.9em;
+  height: 50%;
+  font-family: var(--tekoFont);
+  z-index: 1;
+}
+
+.carryout.column::after {
+  content:"";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.carryout.column {
+  background-image: url("https://cache.dominos.com/olo/6_47_2/assets/build/market/US/_en/images/promo/wlc-wings.jpg");
+  position: relative;
+  top: 20px;
+  height: 255px;
+  width: 342px;
+}
+
+.carryout.column > * {
+  z-index: 10;
+  position: relative;
+}
+
+.carryout.column img {
+  position: relative;
+  z-index: 1;
+  width: 150px;
+  height: 45px;
+  right: 30px;
+  bottom: 2px;
+}
+
+.carryout.content {
+  position: relative;
+  height: 100%;
+  right: 50px;
+  top: 8px;
+}
+
+.carryout.content::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+#carryout-text {
+  position: relative;
+  font-size: x-large;
+  font-family: var(--tekoFont);
+  font-weight: lighter;
+  color: #555555;
+  z-index: 3;
+  bottom: 65px;
+  right: 30px;
+}
+
+.carryout.desc {
+  position: relative;
+  text-shadow: -1px 2px 8px white, 5px 3px 8px black;
+  margin: 300px auto;
+  color: white;
+  font-size: 1.1em;
+  font-family: var(--tekoFont);
+  text-align: left;
+  left: 65px;
+  bottom: 350px;
+  z-index: 3;
+}
+
+#carryout-dollarSign {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  bottom: 680px;
+  left: 110px;
+  color: white;
+  font-size: 3.8em;
+  font-family: var(--arialFont);
+}
+
+#carryout-DollarDigit {
+  position: relative;
+  text-align: center;
+  color: white;
+  left: 140px;
+  bottom: 690px;
+  font-size: 6em;
+  font-family: var(--arialFont);
+  z-index: 1;
+}
+
+#carryout-cents {
+  position: relative;
+  text-align: center;
+  bottom: 740px;
+  left: 188px;
+  color: white;
+  font-size: 5em;
+  font-family: var(--arialFont);
+  z-index: 0;
+}
+
+#carryoutEach-text {
+  position: relative;
+  bottom: 690px;
+  left: 170px;
+  text-shadow: 1px 1px 8px black;
+  text-align: center;
+  color: white;
+  font-weight: lighter;
+  font-size: 1.5em;
+  font-family: var(--courgetteFont);
+  z-index: 1;
+}
+
+#carryout-orderButton {
+  position: relative;
+  bottom: 670px;
+  left: 130px;
+  padding: 0.8em;
+  width: 1.5in;
+  font-weight: lighter;
+  font-size: 1.25em;
+  font-family: var(--tekoFont);
+  z-index: 3;
+}
+
+#carryout-item {
+  position: relative;
+  text-align: left;
+  color: white;
+  bottom: 710px;
+  left: 50px;
+  font-size: 1em;
+  height: 50%;
+  font-family: var(--tekoFont);
+  z-index: 1;
+}
+
+.banner{
+  position: relative;
+  width:400px;
+  height: 225px;
+  margin:7px auto;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  padding-left:190px;
+  top: 600px;
+}
+
+#browse {
+  position: relative;
+  color: grey;
+  text-align: center;
+  width: 300px;
+  margin-left: 400px;
+  margin-top: 700px;
+}
+
+#menuButton {
+  position: relative;
+  bottom: 60px;
+  right: 43em;
+  padding: 0.8em;
+  width: 1.5in;
+  font-weight: lighter;
+  font-size: 1.25em;
+  font-family: var(--tekoFont);
+  z-index: 1;
+}
+
+.book.icon {
+  position: relative;
+  bottom: 1.5em;
+  right: 10.5em;
+  font-size: 6rem;
+}
+
+li {
+  font-family: var(--tekoFont);
+  list-style: none;
+  padding-right: 100px;
+  display: inline;
+  font-size: 2em;
+  text-align: center;
+}
+
+.ui.seven.column.grid.container {
+  display: flex;
+  text-align: center;
+
 }
